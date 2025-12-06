@@ -21,7 +21,6 @@ public class VocabularyMapper {
 
         return VocabularyDto.builder()
                 .id(vocabulary.getId())
-                .user(userMapper.toDto(vocabulary.getUser()))
                 .word(vocabulary.getWord())
                 .partOfSpeech(vocabulary.getPartOfSpeech())
                 .englishDefinition(vocabulary.getEnglishDefinition())
@@ -43,7 +42,6 @@ public class VocabularyMapper {
 
         return Vocabulary.builder()
                 .id(dto.id())
-                .user(userMapper.toEntity(dto.user()))
                 .word(dto.word())
                 .partOfSpeech(dto.partOfSpeech())
                 .englishDefinition(dto.englishDefinition())
