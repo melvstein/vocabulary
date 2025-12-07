@@ -1,0 +1,240 @@
+{
+	"info": {
+		"_postman_id": "7c843459-109f-4cf9-8b68-fa5c62f14545",
+		"name": "Vocabulary Blocking API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15493057"
+	},
+	"item": [
+		{
+			"name": "User API",
+			"item": [
+				{
+					"name": "saveUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"melvstein\",\n    \"password\": \"user123\",\n    \"firstName\": \"Melvin Justine\",\n    \"middleName\": \"Lisay\",\n    \"lastName\": \"Bayogo\",\n    \"email\": \"melvinbayogo@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/api/users",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllUsers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{apiUrl}}/api/users",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{apiUrl}}/api/users/1",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUserById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{apiUrl}}/api/users/1",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vocabulary API",
+			"item": [
+				{
+					"name": "saveVocabulary",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"word\": \"serenity\",\n  \"partOfSpeech\": \"noun\",\n  \"englishDefinition\": \"A state of being calm, peaceful, and untroubled.\",\n  \"tagalogDefinition\": \"Kalagayan ng pagiging payapa, matiwasay, at walang kaguluhan.\",\n  \"englishSynonyms\": \"[\\\"tranquility\\\", \\\"peacefulness\\\", \\\"calmness\\\", \\\"stillness\\\"]\",\n  \"tagalogSynonyms\": \"[\\\"kapayapaan\\\", \\\"katiwasayan\\\", \\\"katahimikan\\\"]\",\n  \"englishAntonyms\": \"[\\\"chaos\\\", \\\"turmoil\\\", \\\"disturbance\\\"]\",\n  \"tagalogAntonyms\": \"[\\\"kaguluhan\\\", \\\"kaguluhan\\\", \\\"ingay\\\"]\",\n  \"exampleSentence\": \"She found serenity while watching the sunset over the quiet sea.\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/api/vocabularies/1",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"api",
+								"vocabularies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllVocabularies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/api/vocabularies",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"api",
+								"vocabularies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllVocabulariesByUserId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/api/vocabularies/1",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"api",
+								"vocabularies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteVocabulary",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{apiUrl}}/api/vocabularies/1",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"api",
+								"vocabularies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "apiUrl",
+			"value": "",
+			"type": "default"
+		}
+	]
+}

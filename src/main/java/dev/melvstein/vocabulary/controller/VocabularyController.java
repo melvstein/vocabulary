@@ -19,6 +19,17 @@ public class VocabularyController {
     private final VocabularyService vocabularyService;
     private final UserService userService;
 
+    @GetMapping
+    public ResponseEntity<List<VocabularyDto>> getAllVocabularies() {
+        List<Vocabulary> vocabularies = vocabularyService.getAllVocabularies();
+
+        if (!vocabularies.isEmpty()) {
+            return ResponseEntity.ok(vocabularyService.toDtos(vocabularies));
+        }
+
+        return ResponseEntity.noContent().build();
+    }
+
     @GetMapping("/{userId}")
     public ResponseEntity<List<VocabularyDto>> getAllVocabulariesByUserId(@PathVariable Long userId) {
         List<Vocabulary> vocabularies = vocabularyService.getAllVocabulariesByUserId(userId);
@@ -45,5 +56,17 @@ public class VocabularyController {
         Vocabulary savedVocabulary = vocabularyService.saveVocabulary(vocabulary);
 
         return ResponseEntity.ok(vocabularyService.toDto(savedVocabulary));
+    }
+
+    @DeleteMapping("/{vocabularyId}")
+    public ResponseEntity<Void> deleteVocabularyById(@PathVariable Long vocabularyId) {
+        Vocabulary vocabulary = vocabularyService.getVocabularyById(vocabularyId);
+
+        if (vocabulary == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        vocabularyService.deleteVocabularyById(vocabularyId);
+        return ResponseEntity.noContent().build();
     }
 }

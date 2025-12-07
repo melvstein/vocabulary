@@ -17,12 +17,24 @@ public class VocabularyService {
     private final VocabularyRepository vocabularyRepository;
     private final VocabularyMapper vocabularyMapper;
 
+    public List<Vocabulary> getAllVocabularies() {
+        return vocabularyRepository.findAll();
+    }
+
+    public Vocabulary getVocabularyById(Long id) {
+        return vocabularyRepository.findById(id).orElse(null);
+    }
+
     public List<Vocabulary> getAllVocabulariesByUserId(Long id) {
         return vocabularyRepository.findAllByUserId(id);
     }
 
     public Vocabulary saveVocabulary(Vocabulary vocabulary) {
         return vocabularyRepository.save(vocabulary);
+    }
+
+    public void deleteVocabularyById(Long id) {
+        vocabularyRepository.deleteById(id);
     }
 
     public Vocabulary toEntity(VocabularyDto dto) {
